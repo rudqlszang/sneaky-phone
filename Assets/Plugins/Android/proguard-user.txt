@@ -1,0 +1,48 @@
+# ─────────────────────────────────────────────────────────────
+#  SeeSo(Eyedid) SDK ProGuard 룰
+#
+#  Minify(Player Settings > Publishing Settings > Minify)를 켜면
+#  R8이 SeeSo의 네이티브 JNI 콜백 대상 클래스를 이름 난독화하거나 제거해버린다.
+#  그러면 초기화는 성공하는데 onGaze 콜백이 한 번도 안 오는 형태로 조용히 실패한다.
+#  증상이 "에러 없이 시선이 안 잡힘"이라 원인 추적이 매우 어려우므로 반드시 유지할 것.
+# ─────────────────────────────────────────────────────────────
+
+-keep class camp.visual.gazetracker.GazeTracker {
+    public <fields>;
+    public <methods>;
+    native <methods>;
+}
+-keep class **.R$* { <fields>; }
+
+# 콜백 인터페이스 — JNI가 이름으로 찾으므로 난독화 금지
+-keep interface camp.visual.gazetracker.callback.CalibrationCallback { *; }
+-keep interface camp.visual.gazetracker.callback.GazeCallback { *; }
+-keep interface camp.visual.gazetracker.callback.GazeTrackerCallback { *; }
+-keep interface camp.visual.gazetracker.callback.ImageCallback { *; }
+-keep interface camp.visual.gazetracker.callback.InitializationCallback { *; }
+-keep interface camp.visual.gazetracker.callback.StatusCallback { *; }
+
+# 열거형 — ordinal 이 아니라 이름으로 매핑된다
+-keep enum camp.visual.gazetracker.state.TrackingState { *; }
+-keep enum camp.visual.gazetracker.state.EyeMovementState { *; }
+-keep enum camp.visual.gazetracker.state.ScreenState { *; }
+-keep enum camp.visual.gazetracker.constant.CalibrationModeType { *; }
+-keep enum camp.visual.gazetracker.constant.InitializationErrorType { *; }
+-keep enum camp.visual.gazetracker.constant.StatusErrorType { *; }
+
+# 데이터 클래스
+-keep class camp.visual.gazetracker.gaze.GazeInfo { *; }
+-keep class camp.visual.gazetracker.device.CameraPosition { *; }
+-keep class camp.visual.gazetracker.util.ViewLayoutChecker { *; }
+
+# JNI 디스패처 — 이게 잘리면 콜백이 전부 끊긴다
+-keep class camp.visual.libgaze.callbacks.JNICallbackDispatcher { *; }
+
+-keepattributes InnerClasses
+
+# ─────────────────────────────────────────────────────────────
+#  릴리스 서명 주의
+#  라이선스 키는 패키지명 + 서명 지문에 묶여 있다. 릴리스 키스토어로 서명하면
+#  개발용 키로는 AUTH_INVALID_APP_SIGNATURE(7)가 나므로 콘솔에 지문을 등록해야 한다.
+#      keytool -list -v -keystore YOUR_KEYSTORE -alias YOUR_ALIAS
+# ─────────────────────────────────────────────────────────────

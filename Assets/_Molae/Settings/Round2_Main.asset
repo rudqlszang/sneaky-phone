@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5acaa167c52ce4ebe8d3256e188faa, type: 3}
+  m_Name: Round2_Main
+  m_EditorClassIdentifier: Assembly-CSharp::Molae.Core.RoundConfig
+  roundIndex: 2
+  bannerText: "2\uAD50\uC2DC \uC2DC\uC791 \u2014 \uC120\uC0DD\uB2D8\uC774 \uB354
+    \uC790\uC8FC \uB3CC\uC544\uBD05\uB2C8\uB2E4"
+  durationSec: 30
+  safeChalkboardSec: 2.46
+  telegraphSec: 0.69
+  dangerStareSec: 2.34
+  returnSec: 0.6
+  graceSec: 0.28
+  awarenessRatePerSec: 2.6
+  fakeChance: 0.2
+  scoreMultiplier: 1.3
+  clearBonus: 200
+  skyTint: {r: 0.9411765, g: 0.65882355, b: 0.40784314, a: 1}

@@ -1,0 +1,91 @@
+# ─────────────────────────────────────────────────────────────
+#  비밀 값 — 절대 커밋 금지
+# ─────────────────────────────────────────────────────────────
+# SeeSo/Eyedid 라이선스 키. seeso_license.sample.txt 만 저장소에 올린다.
+Assets/_Molae/Resources/seeso_license.txt
+Assets/_Molae/Resources/seeso_license.txt.meta
+
+# 서명 키스토어 — 유출되면 앱 소유권을 잃는다. 복구 불가.
+*.keystore
+*.jks
+*.p12
+*.pepk
+keystore.properties
+
+# 로컬 환경 변수
+.env
+.env.*
+!.env.example
+
+
+# ─────────────────────────────────────────────────────────────
+#  타사 SDK — 재배포 권한이 없다
+# ─────────────────────────────────────────────────────────────
+# SeeSo SDK 는 VisualCamp 의 독점 라이선스다. 바이너리(.so/.aar)를 공개
+# 저장소에 올리면 재배포에 해당할 수 있다. 각자 발급받아 넣도록 한다.
+# (없어도 빌드된다 — MOLAE_SEESO 디파인이 없으면 Mock 프로바이더로 컴파일된다)
+Assets/SeeSo/
+Assets/SeeSo.meta
+_SeeSoOriginals/
+
+
+# ─────────────────────────────────────────────────────────────
+#  Unity 생성물
+# ─────────────────────────────────────────────────────────────
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D 크래시 리포트
+sysinfo.txt
+crashlytics-build.properties
+
+# 빌드 산출물
+*.apk
+*.aab
+*.unitypackage
+*.app
+ExportedObj/
+
+# Gradle
+Assets/Plugins/Android/.gradle/
+Assets/Plugins/Android/build/
+
+# Addressables 로컬 빌드
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+
+# ─────────────────────────────────────────────────────────────
+#  OS
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*~

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5acaa167c52ce4ebe8d3256e188faa, type: 3}
+  m_Name: Round1_Warmup
+  m_EditorClassIdentifier: Assembly-CSharp::Molae.Core.RoundConfig
+  roundIndex: 1
+  bannerText: "1\uAD50\uC2DC \uC2DC\uC791"
+  durationSec: 20
+  safeChalkboardSec: 3.2
+  telegraphSec: 0.9
+  dangerStareSec: 1.8
+  returnSec: 0.6
+  graceSec: 0.35
+  awarenessRatePerSec: 2
+  fakeChance: 0
+  scoreMultiplier: 1
+  clearBonus: 100
+  skyTint: {r: 0.9882353, g: 0.8392157, b: 0.5529412, a: 1}

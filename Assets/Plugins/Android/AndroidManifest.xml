@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- SeeSo: 전면 카메라로 시선을 추적한다. SDK가 권한 요청을 대신 해주지 않으므로
+         런타임에 Permission.RequestUserPermission(Permission.Camera) 를 직접 호출해야 하고,
+         권한 승인 뒤에 initGazeTracker 를 불러야 ERROR_CAMERA_PERMISSION(2)을 피한다. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- SeeSo 라이선스 인증은 네트워크 통신이 필수다.
+         오프라인이면 AUTH_CANNOT_FIND_HOST(13)로 초기화가 실패한다. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 햅틱: Unity는 코드에 Handheld.Vibrate() 호출이 있을 때만 이 권한을 자동 추가한다.
+         우리는 AndroidJavaObject로 Vibrator를 직접 쓰므로 직접 선언해야 한다. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 전면 카메라가 없는 기기는 이 게임이 성립하지 않는다.
+         required=true 로 두면 Play 스토어가 해당 기기를 자동으로 필터링한다. -->
+    <uses-feature android:name="android.hardware.camera.front" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <application android:allowBackup="false">
+        <activity
+            android:name="com.unity3d.player.UnityPlayerActivity"
+            android:theme="@style/UnityThemeSelector"
+            android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+            android:hardwareAccelerated="true"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+        </activity>
+    </application>
+</manifest>

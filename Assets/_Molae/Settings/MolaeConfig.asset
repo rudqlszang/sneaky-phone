@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0d1a963dd96574fb3993776167d109, type: 3}
+  m_Name: MolaeConfig
+  m_EditorClassIdentifier: Assembly-CSharp::Molae.Core.MolaeConfig
+  sessionDuration: 50
+  targetFrameRate: 60
+  writingDurationStart: 4
+  writingDurationEnd: 1.6
+  writingRandomness: 0.25
+  telegraphStart: 0.9
+  telegraphEnd: 0.55
+  telegraphMinimum: 0.5
+  watchingDurationStart: 1.2
+  watchingDurationEnd: 2.6
+  watchingCurvePower: 2
+  returningDuration: 0.35
+  fakeUnlockTime: 30
+  fakeChance: 0.35
+  fakeProgress: 0.65
+  fakeRecoverDuration: 0.4
+  reliefTimes:
+  - 15
+  - 30
+  - 45
+  reliefMultiplier: 1.6
+  reliefTolerance: 1.5
+  graceDuration: 0.35
+  suspicionRise: 2
+  suspicionFall: 1.2
+  instantFailAfterGrace: 0
+  scoreTickInterval: 0.1
+  scorePerTick: 1
+  comboStepInterval: 1
+  comboGainPerStep: 0.25
+  comboMaxMultiplier: 4
+  comboGraceDuration: 0.35
+  closeCallWindow: 0.5
+  closeCallBonus: 25
+  gazePadding: 144
+  gazeVoteWindow: 5
+  acceptLowConfidence: 1
+  requireFixation: 0
+  faceMissingPauseDelay: 0.5
+  calibrationPoints: 5
+  calibrationGazeDuration: 2
+  calibrationSettleDelay: 0.6
+  cacheCalibration: 1
+  grades:
+  - minSeconds: 45
+    label: S
+    title: "\uC644\uC804\uBC94\uC8C4"
+    stars: 3
+  - minSeconds: 30
+    label: A
+    title: "\uBCA0\uD14C\uB791"
+    stars: 3
+  - minSeconds: 15
+    label: B
+    title: "\uADF8\uB7ED\uC800\uB7ED"
+    stars: 2
+  - minSeconds: 5
+    label: C
+    title: "\uCD08\uBCF4"
+    stars: 1
+  - minSeconds: 0
+    label: D
+    title: "\uBC14\uB85C \uAC78\uB9BC"
+    stars: 0
+  clearLabel: CLEAR
+  clearTitle: "\uD0C8\uCD9C \uC131\uACF5"
