@@ -89,3 +89,6 @@ Assets/Plugins/Android/build/
 Thumbs.db
 desktop.ini
 *~
+
+# Unity Android 빌드 임시 폴더
+.utmp/

@@ -30,7 +30,6 @@ namespace Molae.Gaze
 
         [Header("프로바이더")]
         [SerializeField] private ProviderMode providerMode = ProviderMode.Auto;
-        [Tooltip("manage.seeso.io 에서 발급받은 라이선스 키. 절대 공개 저장소에 커밋하지 말 것.")]
         [Tooltip("비워두세요. 키는 Resources/seeso_license.txt 에서 읽습니다.")]
         [SerializeField] private string seeSoLicenseKey = "";
 

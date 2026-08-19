@@ -99,6 +99,9 @@ namespace Molae.Core
         public void StartSession()
         {
             if (_flow != null) StopCoroutine(_flow);
+            // 엔딩에서 '메인화면'을 누르면 세션이 이미 끝난 뒤라 이 플래그가 소비되지 않는다.
+            // 남겨두면 다음 판에서 적발됐을 때 선택창을 건너뛰고 바로 타이틀로 튕긴다.
+            _returnToTitle = false;
             rounds.ResetSession();
             _flow = StartCoroutine(RunSession());
         }
